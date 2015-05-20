@@ -4,13 +4,19 @@
   <title>Philip Walton</title>
   <link href="http://philipwalton.com/atom.xml" rel="self"/>
   <link href="http://philipwalton.com/"/>
-  <updated>2015-03-31T11:03:45-07:00</updated>
+  <updated>2015-05-20T12:35:10-07:00</updated>
   <id>http://philipwalton.com/</id>
   <author>
     <name>Philip Walton</name>
     <email>philip@philipwalton.com</email>
   </author>
 
+    <entry>
+      <title>Extending Styles</title>
+      <link href="http://philipwalton.com/articles/extending-styles/"/>
+      <updated>2015-05-20T12:34:57-07:00</updated>
+      <id>http://philipwalton.com/articles/extending-styles/</id>
+    </entry>
     <entry>
       <title>Side Effects in CSS</title>
       <link href="http://philipwalton.com/articles/side-effects-in-css/"/>

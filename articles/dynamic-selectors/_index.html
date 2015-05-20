@@ -3,9 +3,9 @@
   <span class=hljs-tag>&lt;<span class=hljs-title>h1</span> <span class=hljs-attribute>class</span>=<span class=hljs-value>"messagebox-title"</span>&gt;</span>...<span class=hljs-tag>&lt;/<span class=hljs-title>h1</span>&gt;</span>
   <span class=hljs-tag>&lt;<span class=hljs-title>p</span> <span class=hljs-attribute>class</span>=<span class=hljs-value>"messagebox-body"</span>&gt;</span>...<span class=hljs-tag>&lt;/<span class=hljs-title>p</span>&gt;</span>
 <span class=hljs-tag>&lt;/<span class=hljs-title>div</span>&gt;</span></code></pre><pre class=hljs><code class=css><span class=hljs-comment>/* and the corresponding styles */</span>
-<span class=hljs-class>.messagebox</span> <span class=hljs-rules>{ <span class=hljs-rule>}</span></span>
-<span class=hljs-class>.messagebox-title</span> <span class=hljs-rules>{ <span class=hljs-rule>}</span></span>
-<span class=hljs-class>.messagebox-body</span> <span class=hljs-rules>{ <span class=hljs-rule>}</span></span></code></pre><p>A predictable convention like this allows you to easily replace the static names in the selector with a Sass variable like so:</p><pre class=hljs><code class=scss><span class=hljs-variable>$flux-messagebox-name</span><span class=hljs-value>: <span class=hljs-string>"messagebox"</span> !default;</span>
+<span class=hljs-class>.messagebox</span> <span class=hljs-rules>{ }</span>
+<span class=hljs-class>.messagebox-title</span> <span class=hljs-rules>{ }</span>
+<span class=hljs-class>.messagebox-body</span> <span class=hljs-rules>{ }</span></code></pre><p>A predictable convention like this allows you to easily replace the static names in the selector with a Sass variable like so:</p><pre class=hljs><code class=scss><span class=hljs-variable>$flux-messagebox-name</span><span class=hljs-value>: <span class=hljs-string>"messagebox"</span> !default;</span>
 
 .#{<span class=hljs-variable>$flux-messagebox-name</span>} { }
 .#{<span class=hljs-variable>$flux-messagebox-name</span>}-<span class=hljs-tag>title</span> { }

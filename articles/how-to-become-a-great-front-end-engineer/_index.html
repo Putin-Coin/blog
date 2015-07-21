@@ -1,0 +1,88 @@
+
+      
+
+<article role="article" class="hentry">
+
+  <header class="ContentHeader">
+    <h1 class="ContentHeader-title entry-title">How to Become a Great Front-End Engineer</h1>
+    <time class="ContentHeader-date published"
+        datetime="2015-06-04T18:09:12-07:00">
+      June 4, 2015
+    </time>
+  </header>
+
+  <div class="entry-content">
+    
+        <p>I recently received an email from a reader of my blog that, for whatever reason, really got me thinking. Here’s what it said:</p>
+<blockquote>
+<p>Hi Philip, is it okay to ask how you become a great front-end engineer?<br>
+Any advice?</p>
+</blockquote>
+<p>First of all, I was surprised to even be asked this question since I’ve never really thought of myself as a “great” front-end engineer. In fact, the first few years I worked in this industry, I honestly don’t think I was qualified for any of the jobs I had. I was only able to get them because the people interviewing me didn’t know what to ask, and I didn’t realize just how little I knew.</p>
+<p>That being said, I ended up doing very well in each of these roles and became a valued member of the team. By the time I eventually left (for the next challenge I was also not qualified for) and was tasked with helping to hire my replacement, I would reflect with slight amusement at the ironic fact that I probably wouldn’t have hired my former self. I don’t think I would have been able to pass the interviews I was giving.</p>
+<p>As I started thinking about this question more and more, I began to realize how lucky I’ve been. Much of my success has been a result of getting thrust into situations I had no business being in—yet still expected to perform. But I don’t think it’s entirely about being stretched or working hard. Over time I’ve learned some very important lessons that I’d like to share. Some of these are specific to front-end development; some are just generally good practices.</p>
+<p>I’ve read a lot of posts over the years discussing what makes a good front-end engineer. They mostly tend to focus on what someone needs to know—frameworks, tools, etc.—so I wanted to take a different approach.</p>
+<p>If my experience is any indication, then what you know is not always as important as how you think. In this article I’m going to give my opinion on the mindset that makes a front-end engineer great.</p>
+<h2>Don’t just solve problems, figure out what’s really going on</h2>
+<p>Too many people who write CSS and JavaScript tinker until they find something that works, then they just move on. I know this happens because I see it all the time when doing code reviews.</p>
+<p>I’ll frequently ask someone: “Why did you add <code>float: left</code> here?” or “is this <code>position: relative</code> really necessary?”, and they’ll respond: “I don’t know, but if I remove it, it doesn’t work”.</p>
+<p>The same is true of JavaScript. I’ll see a <code>setTimeout</code> that seems to serve no purpose, or someone using the <code>=&gt;</code> function syntax because they’re sick of dealing with bugs from <code>this</code> not being what they expect.</p>
+<p>I get that there are times when you need something that works, and you need it now. But if you never take the time to understand the root of the problem, then you’ll find yourself in this same situation over and over again.</p>
+<p>Taking the time to figure out <em>why</em> your hack works may seem costly now, but I promise it’ll save you time in the future. Having a fuller understanding of the systems you’re working within will mean less guess-and-check work going forward.</p>
+<h2>Learn to anticipate future changes to the platform</h2>
+<p>One of the main differences between front and back-end code is back-end code generally runs in an environment that is completely under your control. The front end, by contrast, is completely outside of your control. The user’s platform or device could completely change at any moment, and your code needs to be able to handle it gracefully.</p>
+<p>I remember reading the source code of a popular JavaScript framework back in 2011 and seeing the following line (changed for simplicity):</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> isIE6 = !isIE7 &amp;&amp; !isIE8 &amp;&amp; !isIE9;
+</code></pre>
+<p>In this case IE6 was the catchall for IE versions, presumably to make things like IE 5.5 work, but at soon as IE10 came out, large portions of our application were completely broken.</p>
+<p>I understand that in the real world feature detection doesn’t work 100% of the time, and sometimes you have to depend on buggy behavior or whitelist browsers whose feature detects erroneously return false positives (or negatives), but any time you do this it’s absolutely critical that you anticipate the almost-certain future where these bugs no longer exist.</p>
+<p>For many of us, most of the code we write will outlive our tenure at our current jobs. Some of the code I wrote more than 8 years ago is still running on websites today, a thought that is both satisfying and terrifying.</p>
+<h2>Read other people’s code</h2>
+<p>Reading other people’s code, for fun, is probably not your idea of a fun Saturday night, but it’s without a doubt one of the best ways to become a better developer.</p>
+<p>Solving problems on your own is a great way to learn, but if that’s all you ever do, you’ll plateau pretty quickly. Reading other people’s code opens your mind to knew ways of doing things. In addition, the ability to read and understand code you didn’t write is essential to working on a team or contributing to open source projects.</p>
+<h2>Read the specs</h2>
+<p>There will always be browser bugs, but when two browsers render the same code differently, people will often assume, without checking for themselves, that the so-called “good” browser is right and the “bad” browser is wrong. But this isn’t always the case, and when you’re wrong about this assumption, whatever workaround you choose will almost certainly break in the future.</p>
+<p>If you take the time to understand what’s supposed to happen and write your code with that in mind, your workaround will be far more future-proof.</p>
+<p>In addition, so-called “great” front-end engineers are often the people on the forefront of change, adopting new technologies before they’re mainstream and even contributing to the development of these technologies. If you cultivate your ability to look at a spec and imagine how a technology will work before you can play with it in a browser, you’ll be part of a select group who is able to talk about and influence the development of that spec.</p>
+<h2>Work with people smarter than you</h2>
+<p>I don’t have any evidence to back this up, but my impression is there are a lot more front-end developers who aspire to freelance full time (or otherwise work by themselves) than there are back-end developers with the same goal.</p>
+<p>Perhaps its because front-end developers tend to be self-taught and back-end developers tend to come from academia (again, a claim I have no evidence to back up, but it seems to be true).</p>
+<p>The problem with being both self-taught and also working for yourself is you generally don’t get the benefit learning from people smarter than you. You don’t have anyone to bounce ideas off of or review your code.</p>
+<p>I strongly recommend, for at least the beginning part of your career, that you work on a team, specifically a team of people who are smarter and more experienced than you.</p>
+<p>And if you do end up working for yourself at some point in your career, make a point of becoming (or staying) involved in open source. Actively contributing to open-source projects gives you much of the benefits of working on a team, sometimes more.</p>
+<h2>Reinvent the wheel</h2>
+<p>Reinventing the wheel is bad for business, but it’s great for learning. jQuery probably makes you far more productive that you were without it, but imagine how much more you’d learn trying to make your own version.</p>
+<p>Don’t take this too far though, as well-established libraries have the advantage of years of bug reports and test cases you’re completely unaware of.</p>
+<p>If you want to work on something but don’t have any idea what to build, why not try rebuilding an open-source library that already exists? And if at any point you get stuck, you’ve got the solution right there.</p>
+<h2>Write about what you learn</h2>
+<p>Last but certainly not least, you should write about what you learn. There are so many good reasons to do this, but perhaps the best reason is it forces you understand the topic better. If you can’t explain how something works then there’s a decent chance you don’t fully understand it. And often times you don’t realize you don’t fully understand it until you try to explain it to someone else.</p>
+<p>In my experience, writing, giving talks, and creating demos has been one of the best ways to force myself to dive in and fully understand a subject, inside and out.</p>
+<p>Even if no one ever reads what you write, the process of writing it down is more than worth it.</p>
+
+      
+  </div>
+
+  <footer class="entry-unrelated">
+    <div class="Share">
+      <span class="Share-figure">
+        <svg viewBox="0 0 39 32">
+          <use xlink:href="#icon-twitter-bird"></use>
+        </svg>
+      </span>
+      <p class="Share-pitch">
+        If you liked this article and think others should read it, please
+
+        
+
+        <a data-social-network="Twitter"
+           data-social-action="tweet"
+           href="http://twitter.com/intent/tweet?text=How%20to%20Become%20a%20Great%20Front-End%20Engineer&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fhow-to-become-a-great-front-end-engineer%2F&via=philwalton">
+           share it on Twitter</a>.
+      </p>
+    </div>
+  </footer>
+
+</article>
+
+
+    

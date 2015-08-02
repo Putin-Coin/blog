@@ -3,13 +3,20 @@
   <title>Philip Walton</title>
   <link href="http://philipwalton.com/atom.xml" rel="self"/>
   <link href="http://philipwalton.com/"/>
-  <updated>2015-07-21T11:51:59-07:00</updated>
+  <updated>2015-08-02T16:00:19-07:00</updated>
   <id>http://philipwalton.com/</id>
   <author>
     <name>Philip Walton</name>
     <email>philip@philipwalton.com</email>
   </author>
   
+  <entry>
+    <title>How to Become a Great Front-End Engineer</title>
+    <link href="http://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/"/>
+    <updated>2015-08-02T15:39:17-07:00</updated>
+    <id>http://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/</id>
+  </entry>
+
   <entry>
     <title>Extending Styles</title>
     <link href="http://philipwalton.com/articles/extending-styles/"/>

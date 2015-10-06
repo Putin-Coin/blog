@@ -11,13 +11,13 @@
 }</span>
 </code></pre><p>While it’s true that <code>.title</code> elements not inside <code>.article</code> or <code>.widget</code> subtrees will not get either of these styles, there’s still the possibility that a <code>.title</code> element will be inside <em>both</em> <code>.article</code> and <code>.widget</code> subtrees at the same time.</p><p>Given the CSS above, the widget title in this example is going to render with an unexpected bottom border:</p><pre><code class=language-html><span class=hljs-comment>&lt;!-- The .article module --&gt;</span>
 <span class=hljs-tag>&lt;<span class=hljs-title>article</span> <span class=hljs-attribute>class</span>=<span class=hljs-value>"article"</span>&gt;</span>
-  <span class=hljs-tag>&lt;<span class=hljs-title>h2</span> **<span class=hljs-attribute>class</span>=<span class=hljs-value>"title"</span><span class=hljs-value>**</span>&gt;</span>Article Title<span class=hljs-tag>&lt;/<span class=hljs-title>h2</span>&gt;</span>
+  <span class=hljs-tag>&lt;<span class=hljs-title>h2</span> <mark><span class=hljs-attribute>class</span>=<span class=hljs-value>"title"</span><span class=hljs-value></span></mark></span>&gt;Article Title<span class=hljs-tag>&lt;/<span class=hljs-title>h2</span>&gt;</span>
   <span class=hljs-tag>&lt;<span class=hljs-title>div</span> <span class=hljs-attribute>class</span>=<span class=hljs-value>"content"</span>&gt;</span>
     <span class=hljs-tag>&lt;<span class=hljs-title>p</span>&gt;</span>…<span class=hljs-tag>&lt;/<span class=hljs-title>p</span>&gt;</span>
 
     <span class=hljs-comment>&lt;!-- The .widget module --&gt;</span>
     <span class=hljs-tag>&lt;<span class=hljs-title>form</span> <span class=hljs-attribute>class</span>=<span class=hljs-value>"widget"</span>&gt;</span>
-      <span class=hljs-tag>&lt;<span class=hljs-title>h2</span> **<span class=hljs-attribute>class</span>=<span class=hljs-value>"title"</span><span class=hljs-value>**</span>&gt;</span>Widget Title<span class=hljs-tag>&lt;/<span class=hljs-title>h2</span>&gt;</span>
+      <span class=hljs-tag>&lt;<span class=hljs-title>h2</span> <mark><span class=hljs-attribute>class</span>=<span class=hljs-value>"title"</span><span class=hljs-value></span></mark></span>&gt;Widget Title<span class=hljs-tag>&lt;/<span class=hljs-title>h2</span>&gt;</span>
       <span class=hljs-tag>&lt;<span class=hljs-title>fieldset</span>&gt;</span>…<span class=hljs-tag>&lt;/<span class=hljs-title>fieldset</span>&gt;</span>
     <span class=hljs-tag>&lt;/<span class=hljs-title>form</span>&gt;</span>
 

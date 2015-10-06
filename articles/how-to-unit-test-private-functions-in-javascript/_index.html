@@ -26,9 +26,9 @@
     }
   }
 
-  **<span class=hljs-comment>/* test-code */</span>**
-  **api._foo = foo**
-  **<span class=hljs-comment>/* end-test-code */</span>**
+  <mark><span class=hljs-comment>/* test-code */</span></mark>
+  <mark>api._foo = foo</mark>
+  <mark><span class=hljs-comment>/* end-test-code */</span></mark>
 
   <span class=hljs-keyword>return</span> api
 }())
@@ -53,19 +53,19 @@
 ])
 grunt.registerTask(<span class=hljs-string>"deploy"</span>, [
   <span class=hljs-string>"concat"</span>,
-  **<span class=hljs-string>"strip-code"</span>**,
+  <mark><span class=hljs-string>"strip-code"</span></mark>,
   <span class=hljs-string>"jshint"</span>,
   <span class=hljs-string>"uglify"</span>
 ])
 </code></pre><p>Now, when you test your code, those test-only blocks will be in the source like you want, but they’ll be stripped out when you deploy to production.</p><p>That means you can still maintain 100% test coverage without sacrificing your code structure or design.</p><p>It’s the best of both worlds.</p><h3>A Word of Caution</h3><p>There are a lot of pros to this approach, and I certainly favor it over exposing your private functions in an awkward way or not testing them at all, but there is a downside that you should be aware of.</p><p>Anytime you change your code between when it’s tested and when it’s deployed, you run the risk of missing something. If you weren’t careful and part of your library depended on the code you removed, your library would break in production, and you might not know about it until long after it shipped.</p><p>Luckily, there are two relatively simple strategies to help prevent this. The easiest way is to assign your test only functions to an object namespace that is obviously not intended for normal use. For example:</p><pre><code class=language-javascript><span class=hljs-comment>/* test-code */</span>
-**api.__testonly__.foo = foo**
+<mark>api.__testonly__.foo = foo</mark>
 <span class=hljs-comment>/* end-test-code */</span>
 </code></pre><p>Using a namespace like <code>__testonly__</code> not only makes the intent obvious, it also makes it possible to add an additional step to the build process to make sure no <code>__testonly__</code> code appears in the final release.</p><p>Another strategy is to split your test suite into two phases. The first phase tests the private functions. The second phase strips the code and then tests the public functions. Here’s an example of that:</p><pre><code class=language-javascript>grunt.registerTask(<span class=hljs-string>"test"</span>, [
   <span class=hljs-string>"concat"</span>,
   <span class=hljs-string>"jshint"</span>,
-  **<span class=hljs-string>"jasmine:private"</span>**,
-  **<span class=hljs-string>"strip-code"</span>**,
+  <mark><span class=hljs-string>"jasmine:private"</span></mark>,
+  <mark><span class=hljs-string>"strip-code"</span></mark>,
   <span class=hljs-string>"jshint"</span>,
-  **<span class=hljs-string>"jasmine:public"</span>**
+  <mark><span class=hljs-string>"jasmine:public"</span></mark>
 ])
 </code></pre><p>Though not always possible (depending on your test setup), this is probably the safest method as it still tests the public API after stripping out the test-only code.</p><p>These two strategies may not be necessary if you’re the only developer or working on a small team, but the more people you have contributing the more caution you’ll need to take. Obviously it’s up to you to determine the right approach for your situation.</p><h2>Conclusion</h2><p>To summarize, due to the nature of JavaScript it’s important to not expose too many variables and functions in the global namespace. Using function closures and the module pattern is a great way to hide functionality, but it also makes it harder to test that functionality.</p><p>Even though that code may be an implementation detail, merely testing the public API may not give you the peace of mind you need when making code changes in the future.</p><p>Testing your code is important, even if it takes a little bit of extra work. This article shows you how you can use a build system to test your private functions without compromising encapsulation and modularity.</p></div><footer class=entry-unrelated><div class=Share><span class=Share-figure><svg viewBox="0 0 39 32"><use xlink:href=#icon-twitter-bird></use></svg></span><p class=Share-pitch>If you liked this article and think others should read it, please <a data-social-network=Twitter data-social-action=tweet href="http://twitter.com/intent/tweet?text=How%20to%20Unit%20Test%20Private%20Functions%20in%20JavaScript&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fhow-to-unit-test-private-functions-in-javascript%2F&via=philwalton">share it on Twitter</a>.</p></div></footer></article>

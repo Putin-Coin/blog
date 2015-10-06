@@ -29,7 +29,7 @@ xl : (min-width: 1000px)
 </code></pre><p>Since we’re using a custom dimension, the key is going to be <code>'dimensionN'</code> where “N” is the index Google Analytics assigned to this particular custom dimension at creation time. (If this is the first custom dimension you’ve created for this Google Analytics <a href=https://support.google.com/analytics/answer/2649554>property</a>, it will be <code>'dimension1'</code>)</p><p>The above code now becomes (changes highlighted):</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
   <span class=hljs-keyword>if</span> (mql.matches) {
-    **ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);**
+    <mark>ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);</mark>
   }
 });
 </code></pre><h3>Detecting breakpoint changes</h3><p>In addition to knowing what breakpoint is active at pageload, it’s also important to know when the active breakpoint changes. If you don’t update the tracker object as the active breakpoint changes, all subsequent hits will be associated with the wrong breakpoint. (Subsequent hits could be things like events, exceptions, social hits, or dynamically loaded pageviews in a single-page app).</p><p>To detect when a <code>MediaQueryList</code> object’s <code>matches</code> property changes, you can register a listener on it via the <code>addListener</code> method:</p><pre><code class=language-js><span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(<span class=hljs-string>'(min-width: 400px)'</span>);
@@ -71,13 +71,13 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
       ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
-      **ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);**
+      <mark>ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);</mark>
     }
   });
 });
 
 </code></pre><h3>Debouncing rapid changes</h3><p>If a browser window is resized from small to large (or vise versa) very quickly, you’ll likely report several “change” events that aren’t “real” and can negatively affect your data quality. To avoid this, you’ll probably want to rate-limit your function calls to ensure you only send a change event after all changes have settled.</p><p>This rate-limiting can be done by adding a debounce of one second to the change listener function. In plain English that means a hit will only be sent if another change isn’t detected within the next second. This is implemented using a simple <code>setTimeout</code>:</p><pre><code class=language-js><span class=hljs-comment>// Create a timeout reference in an external scope.</span>
-**<span class=hljs-keyword>var</span> timeout;**
+<mark><span class=hljs-keyword>var</span> timeout;</mark>
 
 <span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
@@ -90,11 +90,11 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   <span class=hljs-comment>// Update the breakpoint as the matched media changes, and send an event.</span>
   mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
-      **clearTimeout(timeout);**
-      **timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{**
+      <mark>clearTimeout(timeout);</mark>
+      <mark>timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{</mark>
         ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
         ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);
-      **}, <span class=hljs-number>1000</span>);**
+      <mark>}, <span class=hljs-number>1000</span>);</mark>
     }
   });
 });

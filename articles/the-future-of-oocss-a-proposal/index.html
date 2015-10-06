@@ -3,7 +3,7 @@
   <span class=hljs-attribute>border</span><span class=hljs-value>: thin solid black;</span>
 }
 <span class=hljs-class>.button-primary</span> {
-  **<span class=hljs-at_rule>@<span class=hljs-keyword>extend</span><span class=hljs-preprocessor> .button</span>;</span>**
+  <mark><span class=hljs-at_rule>@<span class=hljs-keyword>extend</span><span class=hljs-preprocessor> .button</span>;</span></mark>
   <span class=hljs-attribute>background-color</span><span class=hljs-value>: blue;</span>
 }
 </code></pre><p>That Sass compiles into the following CSS:</p><pre><code class=language-css><span class=hljs-class>.button</span>, <span class=hljs-class>.button-primary</span> <span class=hljs-rules>{

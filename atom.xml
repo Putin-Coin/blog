@@ -3,13 +3,20 @@
   <title>Philip Walton</title>
   <link href="http://philipwalton.com/atom.xml" rel="self"/>
   <link href="http://philipwalton.com/"/>
-  <updated>2015-10-05T19:32:32-07:00</updated>
+  <updated>2015-11-01T14:39:33-08:00</updated>
   <id>http://philipwalton.com/</id>
   <author>
     <name>Philip Walton</name>
     <email>philip@philipwalton.com</email>
   </author>
   
+  <entry>
+    <title>Do We Actually Need Specificity In CSS?</title>
+    <link href="http://philipwalton.com/articles/do-we-actually-need-specificity-in-css/"/>
+    <updated>2015-11-01T14:37:42-08:00</updated>
+    <id>http://philipwalton.com/articles/do-we-actually-need-specificity-in-css/</id>
+  </entry>
+
   <entry>
     <title>How to Become a Great Front-End Engineer</title>
     <link href="http://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/"/>

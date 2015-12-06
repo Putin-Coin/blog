@@ -3,13 +3,20 @@
   <title>Philip Walton</title>
   <link href="http://philipwalton.com/atom.xml" rel="self"/>
   <link href="http://philipwalton.com/"/>
-  <updated>2015-11-27T11:00:32-08:00</updated>
+  <updated>2015-12-06T13:50:02-08:00</updated>
   <id>http://philipwalton.com/</id>
   <author>
     <name>Philip Walton</name>
     <email>philip@philipwalton.com</email>
   </author>
   
+  <entry>
+    <title>Why I'm Excited About Native CSS Variables</title>
+    <link href="http://philipwalton.com/articles/why-im-excited-about-native-css-variables/"/>
+    <updated>2015-12-05T12:43:53-08:00</updated>
+    <id>http://philipwalton.com/articles/why-im-excited-about-native-css-variables/</id>
+  </entry>
+
   <entry>
     <title>Do We Actually Need Specificity In CSS?</title>
     <link href="http://philipwalton.com/articles/do-we-actually-need-specificity-in-css/"/>

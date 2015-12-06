@@ -19,14 +19,14 @@ xl : (min-width: 1000px)
   lg: <span class=hljs-string>'(min-width: 800px) and (max-width: 999px)'</span>,
   xl: <span class=hljs-string>'(min-width: 1000px)'</span>
 };
-</code></pre><p>As you can see I added an “xs” breakpoint to cover the extremely small widths, and I added <code>max-width</code> logic to the middle breakpoints to make them exclusive.</p><h3 id=matching-media>Matching media</h3><p>To figure out which breakpoint is currently matching, you just iterate over the items in your <code>breakpoints</code> object, create a <code>MediaQueryList</code> instance for each one, and check its <code>matches</code> property.</p><p>Given the breakpoint object shown above, here’s how you can find the active breakpoint:</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+</code></pre><p>As you can see I added an “xs” breakpoint to cover the extremely small widths, and I added <code>max-width</code> logic to the middle breakpoints to make them exclusive.</p><h3 id=matching-media>Matching media</h3><p>To figure out which breakpoint is currently matching, you just iterate over the items in your <code>breakpoints</code> object, create a <code>MediaQueryList</code> instance for each one, and check its <code>matches</code> property.</p><p>Given the breakpoint object shown above, here’s how you can find the active breakpoint:</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
   <span class=hljs-keyword>if</span> (mql.matches) {
     <span class=hljs-comment>// This breakpoint matches.</span>
   }
 });
 </code></pre><h3 id=tracking-the-matching-breakpoint>Tracking the matching breakpoint</h3><p>Once you know which breakpoint is matching, you need to update the tracker object. To update the tracker object in analytics.js, you call the <code>set</code> method and pass in a key and a value (or an object of key/value pairs).</p><pre><code class=language-js>ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'key'</span>, <span class=hljs-string>'value'</span>);
-</code></pre><p>Since we’re using a custom dimension, the key is going to be <code>'dimensionN'</code> where “N” is the index Google Analytics assigned to this particular custom dimension at creation time. (If this is the first custom dimension you’ve created for this Google Analytics <a href=https://support.google.com/analytics/answer/2649554>property</a>, it will be <code>'dimension1'</code>)</p><p>The above code now becomes (changes highlighted):</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+</code></pre><p>Since we’re using a custom dimension, the key is going to be <code>'dimensionN'</code> where “N” is the index Google Analytics assigned to this particular custom dimension at creation time. (If this is the first custom dimension you’ve created for this Google Analytics <a href=https://support.google.com/analytics/answer/2649554>property</a>, it will be <code>'dimension1'</code>)</p><p>The above code now becomes (changes highlighted):</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
   <span class=hljs-keyword>if</span> (mql.matches) {
     <mark>ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);</mark>
@@ -34,7 +34,7 @@ xl : (min-width: 1000px)
 });
 </code></pre><h3 id=detecting-breakpoint-changes>Detecting breakpoint changes</h3><p>In addition to knowing what breakpoint is active at pageload, it’s also important to know when the active breakpoint changes. If you don’t update the tracker object as the active breakpoint changes, all subsequent hits will be associated with the wrong breakpoint. (Subsequent hits could be things like events, exceptions, social hits, or dynamically loaded pageviews in a single-page app).</p><p>To detect when a <code>MediaQueryList</code> object’s <code>matches</code> property changes, you can register a listener on it via the <code>addListener</code> method:</p><pre><code class=language-js><span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(<span class=hljs-string>'(min-width: 400px)'</span>);
 
-mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
   <span class=hljs-keyword>if</span> (mql.matches) {
     <span class=hljs-comment>// The viewport width is now greater than or equal to 400 pixels.</span>
   }
@@ -42,7 +42,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
     <span class=hljs-comment>// The viewport width is now less than 400 pixels.</span>
   }
 });
-</code></pre><h3 id=updating-the-tracker-when-the-active-breakpoint-changes>Updating the tracker when the active breakpoint changes</h3><p>To update the active breakpoint stored on the tracker object, you can add listeners to each <code>MediaQueryList</code> object already created. You’ll need to make sure and check that its <code>matches</code> property is <code>true</code> since listener callbacks are invoked when a media query matches as well as when it no longer matches.</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+</code></pre><h3 id=updating-the-tracker-when-the-active-breakpoint-changes>Updating the tracker when the active breakpoint changes</h3><p>To update the active breakpoint stored on the tracker object, you can add listeners to each <code>MediaQueryList</code> object already created. You’ll need to make sure and check that its <code>matches</code> property is <code>true</code> since listener callbacks are invoked when a media query matches as well as when it no longer matches.</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
 
   <span class=hljs-comment>// Set the initial breakpoint on page load.</span>
@@ -51,7 +51,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   }
 
   <span class=hljs-comment>// Update the breakpoint as the matched media changes.</span>
-  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
       ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
     }
@@ -59,7 +59,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
 });
 
 </code></pre><h3 id=tracking-breakpoint-changes>Tracking breakpoint changes</h3><p>In addition to updating the tracker, it may also be interesting to learn how frequently your users change breakpoints mid-session. The conventional wisdom suggests that only developer-types resize their browser window, but aren’t you curious to know for sure?</p><p>You can track breakpoint changes in Google Analytics using <a href=https://developers.google.com/analytics/devguides/collection/analyticsjs/events>event tracking</a>. Events usually have a category, action, and label. On this site I chose the category “breakpoint”, the action “change”, and the label as whatever the current breakpoint is (e.g. “sm”, “md”, “lg”, etc.).</p><p>Sending an event hit that tracks a breakpoint change might look like this:</p><pre><code class=language-js>ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, <span class=hljs-string>'sm'</span>);
-</code></pre><p>You can add this event tracking code to your existing breakpoint change listeners. Make sure you update the tracker object with the new breakpoint before you send the event, otherwise the event will be associated with the previous breakpoint.</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+</code></pre><p>You can add this event tracking code to your existing breakpoint change listeners. Make sure you update the tracker object with the new breakpoint before you send the event, otherwise the event will be associated with the previous breakpoint.</p><pre><code class=language-js><span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
 
   <span class=hljs-comment>// Set the initial breakpoint on page load.</span>
@@ -68,7 +68,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   }
 
   <span class=hljs-comment>// Update the breakpoint as the matched media changes.</span>
-  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
       ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
       <mark>ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);</mark>
@@ -79,7 +79,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
 </code></pre><h3 id=debouncing-rapid-changes>Debouncing rapid changes</h3><p>If a browser window is resized from small to large (or vise versa) very quickly, you’ll likely report several “change” events that aren’t “real” and can negatively affect your data quality. To avoid this, you’ll probably want to rate-limit your function calls to ensure you only send a change event after all changes have settled.</p><p>This rate-limiting can be done by adding a debounce of one second to the change listener function. In plain English that means a hit will only be sent if another change isn’t detected within the next second. This is implemented using a simple <code>setTimeout</code>:</p><pre><code class=language-js><span class=hljs-comment>// Create a timeout reference in an external scope.</span>
 <mark><span class=hljs-keyword>var</span> timeout;</mark>
 
-<span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+<span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
 
   <span class=hljs-comment>// Set the initial breakpoint on page load.</span>
@@ -88,10 +88,10 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   }
 
   <span class=hljs-comment>// Update the breakpoint as the matched media changes, and send an event.</span>
-  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
       <mark>clearTimeout(timeout);</mark>
-      <mark>timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{</mark>
+      <mark>timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{</mark>
         ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
         ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);
       <mark>}, <span class=hljs-number>1000</span>);</mark>
@@ -107,7 +107,7 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   xl: <span class=hljs-string>'(min-width: 1000px)'</span>
 };
 
-<span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>(breakpoint)</span> </span>{
+<span class=hljs-built_in>Object</span>.keys(breakpoints).forEach(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params>breakpoint</span>) </span>{
   <span class=hljs-keyword>var</span> mql = <span class=hljs-built_in>window</span>.matchMedia(breakpoints[breakpoint]);
 
   <span class=hljs-comment>// Set the initial breakpoint on page load.</span>
@@ -116,14 +116,14 @@ mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</spa
   }
 
   <span class=hljs-comment>// Update the breakpoint as the matched media changes, and send an event.</span>
-  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+  mql.addListener(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
     <span class=hljs-keyword>if</span> (mql.matches) {
       clearTimeout(timeout);
-      timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span><span class=hljs-params>()</span> </span>{
+      timeout = setTimeout(<span class=hljs-function><span class=hljs-keyword>function</span>(<span class=hljs-params></span>) </span>{
         ga(<span class=hljs-string>'set'</span>, <span class=hljs-string>'dimensionN'</span>, breakpoint);
         ga(<span class=hljs-string>'send'</span>, <span class=hljs-string>'event'</span>, <span class=hljs-string>'breakpoint'</span>, <span class=hljs-string>'change'</span>, breakpoint);
       }, <span class=hljs-number>1000</span>);
     }
   });
 });
-</code></pre><p>Feel free to use this code on your site, but don’t forget to change the breakpoints to whatever you’re using. If you’d like to see what my implementation looks like (it’s almost exactly the same), you can find the code on <a href=https://github.com/philipwalton/blog/blob/03452d29533cbc85fe863b5917f43cf1638a8236/_scripts/analytics.js#L7-L42>Github</a>.</p><aside class=Footnotes><h1 class=Footnotes-title>Footnotes:</h1><ol class=Footnotes-items><li id=footnote-1>There may be situations where you want to track more than one matching media query at the same time. A good example of this would be tracking screen width *and* device pixel density. In such cases it's best to track these with two separate dimensions. Within a single dimension, only one value can apply at a time.</li></ol></aside></div><footer class=entry-unrelated><div class=Share><span class=Share-figure><svg viewBox="0 0 39 32"><use xlink:href=#icon-twitter-bird></use></svg></span><p class=Share-pitch>If you liked this article and think others should read it, please <a data-social-network=Twitter data-social-action=tweet href="http://twitter.com/intent/tweet?text=Measuring%20Your%20Site's%20Responsive%20Breakpoint%20Usage&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fmeasuring-your-sites-responsive-breakpoint-usage%2F&via=philwalton">share it on Twitter</a>.</p></div></footer></article>
+</code></pre><p>Feel free to use this code on your site, but don’t forget to change the breakpoints to whatever you’re using. If you’d like to see what my implementation looks like (it’s almost exactly the same), you can find the code on <a href=https://github.com/philipwalton/blog/blob/03452d29533cbc85fe863b5917f43cf1638a8236/_scripts/analytics.js#L7-L42>Github</a>.</p><aside class=Footnotes><h1 class=Footnotes-title>Footnotes:</h1><ol class=Footnotes-items><li id=footnote-1>There may be situations where you want to track more than one matching media query at the same time. A good example of this would be tracking screen width *and* device pixel density. In such cases it's best to track these with two separate dimensions. Within a single dimension, only one value can apply at a time.</li></ol></aside></div><footer class=entry-unrelated><div id=share class=Share><span class=Share-figure><svg viewBox="0 0 39 32"><use xlink:href=#icon-twitter-bird></use></svg></span><p class=Share-pitch>If you liked this article and think others should read it, please <a data-social-network=Twitter data-social-action=tweet href="http://twitter.com/intent/tweet?text=Measuring%20Your%20Site's%20Responsive%20Breakpoint%20Usage&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fmeasuring-your-sites-responsive-breakpoint-usage%2F&via=philwalton">share it on Twitter</a>.</p></div></footer></article>

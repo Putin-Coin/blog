@@ -1,2 +1,400 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>How to Become a Great Front-End Engineer &mdash; Philip Walton</title><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]--><link rel=preconnect href=//ajax.googleapis.com><link rel=preconnect href=//fonts.googleapis.com><script>!function(e){e.ga=e.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date;var a={mediaQueryDefinitions:[{name:"Breakpoint",dimensionIndex:1,items:[{name:"sm",media:"all"},{name:"md",media:"(min-width: 36em)"},{name:"lg",media:"(min-width: 48em)"}]},{name:"Resolution",dimensionIndex:2,items:[{name:"1x",media:"all"},{name:"1.5x",media:"(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)"},{name:"2x",media:"(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"}]},{name:"Orientation",dimensionIndex:3,items:[{name:"landscape",media:"(orientation: landscape)"},{name:"portrait",media:"(orientation: portrait)"}]}]};ga("create","UA-21292978-1","auto",{siteSpeedSampleRate:10}),ga("create","UA-21292978-4","auto","control",{siteSpeedSampleRate:10}),ga("create","UA-21292978-3","auto","testing",{siteSpeedSampleRate:10}),ga("require","mediaQueryTracker",a),ga("require","outboundLinkTracker"),ga("require","socialTracker"),ga("require","urlChangeTracker"),ga("send","pageview"),ga("control.require","mediaQueryTracker",a),ga("control.require","outboundLinkTracker"),ga("control.require","socialTracker"),ga("control.require","urlChangeTracker"),ga("control.send","pageview"),ga("testing.require","mediaQueryTracker",a),ga("testing.require","outboundLinkTracker"),ga("testing.require","pageVisibilityTracker"),ga("testing.require","socialTracker"),ga("testing.require","urlChangeTracker"),ga("testing.send","pageview")}(window);</script><script async src=https://www.google-analytics.com/analytics.js></script><script>window.__userTiming=window.performance&&"function"==typeof performance.mark&&"function"==typeof performance.measure&&"function"==typeof performance.getEntriesByName,__userTiming&&performance.mark("css:start");</script><link href=/assets/css/main.css rel=stylesheet><script>if(__userTiming){performance.mark("css:end"),performance.measure("css:block","css:start","css:end");var cssBlock=performance.getEntriesByName("css:block")[0];ga("send","timing","CSS","block",Math.round(cssBlock.duration),"local"),ga("control.send","timing","CSS","block",Math.round(cssBlock.duration),"local"),ga("testing.send","timing","CSS","block",Math.round(cssBlock.duration),"local")}</script><script>__userTiming&&performance.mark("fonts:start"),WebFontConfig={google:{families:["Open+Sans:400,400italic,600:latin"]},active:function(){if(__userTiming){performance.mark("fonts:end"),performance.measure("fonts:load","fonts:start","fonts:end");var n=performance.getEntriesByName("fonts:load")[0];ga("send","timing","Fonts","load",Math.round(n.duration),"fonts.googleapis.com"),ga("control.send","timing","Fonts","load",Math.round(n.duration),"fonts.googleapis.com"),ga("testing.send","timing","Fonts","load",Math.round(n.duration),"fonts.googleapis.com")}},inactive:function(){ga("send","event","Fonts","error","fonts.googleapis.com",{nonInteraction:!0}),ga("control.send","event","Fonts","error","fonts.googleapis.com",{nonInteraction:!0}),ga("testing.send","event","Fonts","error","fonts.googleapis.com",{nonInteraction:!0})}};</script><script async src=//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js></script><link href=//feeds.feedburner.com/philipwalton rel=alternate title="Philip Walton" type=application/atom+xml><meta name=description content="Thoughts on web development, open source, software architecture, and the future."><meta name=viewport content="width=device-width,initial-scale=1"><svg display=none><defs><g id=icon-twitter-bird><path d="M34.7 5c1.7-1 2.8-2.5 3.4-4.4-1.6 0.9-3.3 1.6-5 2-1.6-1.7-3.6-2.6-5.8-2.6-2.2 0-4.2 0.7-5.7 2.3-1.6 1.6-2.3 3.4-2.3 5.8 0 0.6 0.1 1.2 0.2 1.8-6.9-0.4-12.6-3.2-16.9-8.5-0.7 1.2-1.1 2.7-1.1 4.1 0 3 1.2 5.2 3.6 6.8-1.2 0-2.5-0.4-3.6-1v0.1c0 2 0.6 3.7 1.8 5.2 1.2 1.5 2.7 2.5 4.6 2.8-0.6 0.1-1.2 0.2-2.1 0.2-0.4 0-0.9 0-1.5-0.1 0.5 1.5 1.4 2.8 2.8 3.8 1.4 1 3 1.5 4.7 1.6-3.1 2.5-6.4 3.7-10 3.7-0.5 0-1.1 0-2-0.1 3.7 2.2 7.8 3.4 12.4 3.4 3.6 0 6.8-0.7 9.8-2.1 3-1.4 5.4-3.2 7.3-5.4 1.8-2.2 3.3-4.7 4.3-7.4s1.6-5.4 1.6-8.1v-1c1.4-1 2.7-2.5 3.9-4.2-1.6 0.6-3.2 1.1-4.7 1.2z"></path></g><g id=icon-rss><path d="M16 0q6.6 0 11.3 4.7t4.7 11.3q0 6.6-4.7 11.3t-11.3 4.7-11.3-4.7-4.7-11.3 4.7-11.3 11.3-4.7zM10.7 24q1.1 0 1.9-0.8t0.8-1.9-0.8-1.9-1.9-0.8-1.9 0.8-0.8 1.9 0.8 1.9 1.9 0.8zM16.7 24h3.3q0-5-3.5-8.5t-8.5-3.5v3.3q3.6 0 6.1 2.5t2.5 6.1zM22.7 24h3.3q0-3.7-1.4-7t-3.8-5.7-5.7-3.8-7-1.4v3.3q6.1 0 10.4 4.3t4.3 10.4z"></path></g><g id=icon-twitter><path d="M16 0q6.6 0 11.3 4.7t4.7 11.3-4.7 11.3-11.3 4.7-11.3-4.7-4.7-11.3 4.7-11.3 11.3-4.7zM25.7 12.5q1.2-0.9 2.3-2.3-1.3 0.6-2.6 0.7 1.4-0.8 2-2.5-1.4 0.8-2.9 1.1-1.3-1.4-3.3-1.4-1.9 0-3.2 1.3t-1.3 3.2q0 0.6 0.1 1-5.7-0.3-9.4-4.8-0.6 1.1-0.6 2.3 0 2.4 2 3.8-1 0-2-0.6v0q0 1.6 1 2.9t2.6 1.6q-0.5 0.1-1.2 0.1-0.3 0-0.9-0.1 0.4 1.4 1.6 2.2t2.6 0.9q-2.6 2.1-5.6 2.1-0.4 0-1.1-0.1 3.1 2 7 2 3 0 5.5-1.2t4.1-3.1 2.4-4.1 0.9-4.6v-0.6z"></path></g><g id=icon-github><path d="M16 0q6.59 0 11.3 4.7t4.7 11.3q0 5.52-3.39 9.85t-8.61 5.67v-4.18q0-2.89-1.67-4.18 3.37-0.52 5.52-2.41t2.15-4.74q0-2.52-1.85-4.59 0.67-3.07-0.15-4.74-2.04 0.19-4.63 1.78-1.78-0.44-3.37-0.44t-3.37 0.44q-2.59-1.59-4.63-1.78-0.85 1.78-0.15 4.74-1.85 2.07-1.85 4.59 0 2.85 2.15 4.74t5.52 2.41q-0.85 0.63-1.3 1.82-0.67 0-1.37-0.13t-1.28-0.35-1.11-0.5-0.96-0.56-0.72-0.52-0.48-0.39l-0.15-0.15q-0.26-0.26-0.52-0.07-0.3 0.19-0.22 0.52 0.7 1.37 1.19 2 1.93 2.48 5.26 3.48v3.22q-5.22-1.33-8.61-5.67t-3.39-9.85q0-6.63 4.68-11.31t11.32-4.68z"></path></g><g id=icon-menu><path d="M3 6h18v2.016h-18v-2.016zM3 12.984v-1.969h18v1.969h-18zM3 18v-2.016h18v2.016h-18z"></path></g></defs></svg></head><body class=Site><div class=Site-header><header class=Header id=drawer-container><a class=Header-info href=/ title=Home><h1 class=Header-title>Philip Walton</h1><p class=Header-tagline>Engineer @ Google</p></a><div class=Header-drawer id=drawer-contents><div class=Drawer><nav class=Drawer-site><ul class=SiteNav><li class=SiteNav-item><a class=SiteNav-link href=/articles/ title=Articles>Articles</a></li><li class=SiteNav-item><a class=SiteNav-link href=/about/ title=About>About</a></li></ul></nav><nav class=Drawer-social><ul class=SocialNav><li class=SocialNav-item><a class="SocialNav-link SocialNav-link--twitter" href=https://twitter.com/philwalton title=Twitter><svg viewBox="0 0 32 32"><use xlink:href=#icon-twitter></use></svg></a></li><li class=SocialNav-item><a class="SocialNav-link SocialNav-link--github" href=https://github.com/philipwalton title=Github><svg viewBox="0 0 32 32"><use xlink:href=#icon-github></use></svg></a></li><li class=SocialNav-item><a class="SocialNav-link SocialNav-link--rss" href=http://feeds.feedburner.com/philipwalton title=RSS><svg viewBox="0 0 32 32"><use xlink:href=#icon-rss></use></svg></a></li></ul></nav></div></div><div class=Header-drawerToggle id=drawer-toggle><svg class=Icon viewBox="0 0 24 24"><use xlink:href=#icon-menu></use></svg></div></header></div><div class=Site-contentContainer><main class=Site-content><article role=article class=hentry><header class=ContentHeader><h1 class="ContentHeader-articleTitle entry-title">How to Become a Great Front-End Engineer</h1><time class="ContentHeader-articleDate published" datetime=2015-08-02T15:39:17-07:00>August 2, 2015</time></header><div class=entry-content><p>I recently received an email from a reader of my blog that, for whatever reason, really got me thinking. Here’s what it said:</p><blockquote><p>Hi Philip, is it okay to ask how you become a great front-end engineer?<br>Any advice?</p></blockquote><p>I have to admit, I was surprised to even be asked this question since I’ve never really thought of myself as a “great” front-end engineer. In fact, the first few years I worked in this industry, I honestly don’t think I was qualified for any of the jobs I had. I only applied for them because I didn’t realize how little I knew, and I only got them because the people interviewing me didn’t know what questions to ask.</p><p>That being said, I ended up doing very well in each of these roles and became a valued member of the team. When I eventually left (for the next challenge I was also not qualified for) I was usually tasked with hiring my replacement. Looking back now on how I approached these interviews, I’m struck by how much emphasis I placed on knowledge—despite lacking in that area when I started. My current self probably wouldn’t have hired my former self, even though I knew from personal experience that success was possible.</p><p>The longer I work on the web, the more I realize that what separates the good people from the really good people isn’t what they know; it’s how they think. Obviously knowledge is important—critical in some cases—but in a field that changes so quickly, how you go about acquiring that knowledge is always going to be more important (at least in the long term) than what you know at any given time. And perhaps most important of all: how you use that knowledge to solve everyday problems.</p><p>There are plenty of articles out there that talk about the languages, frameworks, and tools you need to know to get a job. I wanted to take a different approach. In this article I’m going to talk about the mindset of a front-end engineer, and hopefully give a more lasting answer to the question: <em>how do you become great?</em></p><h2 id=dont-just-solve-problems-figure-out-whats-really-going-on>Don’t just solve problems, figure out what’s really going on</h2><p>Too many people who write CSS and JavaScript tinker until they find something that works, and then they just move on. I know this happens because I see it all the time during code reviews.</p><p>I’ll frequently ask someone: “Why did you add <code>float: left</code> here?” or “is this <code>overflow: hidden</code> really necessary?”, and they’ll respond: “I don’t know, but if I remove it, it doesn’t work”.</p><p>The same is true of JavaScript. I’ll see a <code>setTimeout</code> being used to prevent a race-condition, or someone stopping event propagation with no regard for <a href="http://css-tricks.com/dangers-stopping-event-propagation/">how it will affect</a> other event handlers on the page.</p><p>I get that there are times when you need something that works, and you need it now. But if you never take the time to understand the root of your problem, you’ll find yourself in the same situation over and over again.</p><p>Taking the time to figure out <em>why</em> your hack works may seem costly now, but I promise it’ll save you time in the future. Having a fuller understanding of the systems you’re working within will mean less guess-and-check work going forward.</p><h2 id=learn-to-anticipate-future-changes-to-the-browser-landscape>Learn to anticipate future changes to the browser landscape</h2><p>One of the main differences between front and back-end code is back-end code generally runs in an environment that’s under your control. The front end, by contrast, is completely outside of your control. The platform or device your users have could completely change at any moment, and your code needs to be able to handle that gracefully.</p><p>I remember reading through the source code of a popular JavaScript framework back in 2011 and seeing the following line (changed for simplicity):</p><pre><code class=language-js><span class=hljs-keyword>var</span> isIE6 = !isIE7 &amp;&amp; !isIE8 &amp;&amp; !isIE9;
-</code></pre><p>In this case IE6 was the catchall for IE versions, presumably to handle versions of IE older than 6. But at soon as IE10 came out, large portions of our application completely broke.</p><p>I understand that in the real world feature detection doesn’t work 100% of the time, and sometimes you have to depend on buggy behavior or whitelist browsers whose feature detects erroneously return false positives (or negatives), but any time you do this it’s absolutely critical that you anticipate the almost-certain future where these bugs no longer exist.</p><p>For many of us, the code we write today will outlive our tenure at our current job. Some of the code I wrote more than 8 years ago is still running on large, production websites today, a thought that is both satisfying and terrifying.</p><h2 id=read-the-specs>Read the specs</h2><p>There will always be browser bugs, but when two browsers render the same code differently, people will often assume, without checking for themselves, that the so-called “good” browser is right and the “bad” browser is wrong. But this isn’t always the case, and when you’re wrong about this assumption, whatever workaround you choose will almost certainly break in the future.</p><p>A timely example of this is the default minimum size of flex items. According to the <a href=http://www.w3.org/TR/css-flexbox/#min-size-auto>spec</a>, the initial <code>min-width</code> and <code>min-height</code> value for flex items is <code>auto</code> (rather than <code>0</code>), which means by default they shouldn’t shrink to smaller than the minimum size of their content. For the past 8 months, Firefox was the only browser to implement this correctly.<sup><a href=#footnote-1>[1]</a></sup></p><p>If you encountered this cross-browser incompatibility and noticed that your site rendered the same in Chrome, IE, Opera, and Safari, but looked different in Firefox, you’d probably assume Firefox had it wrong. In fact, I’ve witnessed this happen a lot. Many of the issues reported on my <a href=https://github.com/philipwalton/flexbugs>Flexbugs</a> project were actually due to this incompatibility, and the workarounds proposed, if implemented, would have failed two weeks ago when Chrome 44 came out. Instead of these workarounds following the spec, they were unknowingly penalizing good behavior.<sup><a href=#footnote-2>[2]</a></sup></p><p>When two or more browsers render the same code differently, you should take the time to figure out which one of them is correct and write your code with that in mind. Your workarounds will be far more future-proof as a result.</p><p>In addition, so-called “great” front-end engineers are often the people on the forefront of change, adopting new technologies before they’re mainstream and even contributing to the development of those technologies. If you cultivate your ability to look at a spec and imagine how a technology will work before you can play with it in a browser, you’ll be part of a select group who is able to talk about and influence the development of that spec.</p><h2 id=read-other-peoples-code>Read other people’s code</h2><p>Reading other people’s code, for fun, is probably not your idea of a fun Saturday night, but it’s without a doubt one of the best ways to become a better developer.</p><p>Solving problems on your own is a great way to learn, but if that’s all you ever do, you’ll plateau pretty quickly. Reading other people’s code opens your mind to new ways of doing things. And the ability to read and understand code that you didn’t write is essential to working on a team or contributing to open source projects.</p><p>I actually think one of the biggest mistakes companies make when hiring new engineers is they only ask them to write code—new code, from scratch. I’ve never been on an interview where I was asked to read some existing code, find the problems with it, and then fix those problems. It’s really too bad because most of your time as an engineer is spent adding to or changing an existing codebase. Rarely are you building something new from scratch.</p><h2 id=work-with-people-smarter-than-you>Work with people smarter than you</h2><p>I get the impression that there are a lot more front-end developers who want to freelance (or otherwise work full-time by themselves) than there are back-end developers with the same goal. Perhaps it’s because front-end people tend to be self-taught and back-end people tend to come from academia.</p><p>The problem with being both self-taught and also working for yourself is you generally don’t get the benefit of learning from people smarter than you. You don’t have anyone to bounce ideas off of or review your code.</p><p>I strongly recommend, for at least the beginning part of your career, that you work on a team, specifically a team of people who are smarter and more experienced than you.</p><p>If you do end up working for yourself at some point in your career, make a point of becoming (or staying) involved in open source. Actively contributing to open-source projects gives you many of the same benefits of working on a team, sometimes even more.</p><h2 id=reinvent-the-wheel>Reinvent the wheel</h2><p>Reinventing the wheel is bad for business, but it’s great for learning. You may be tempted to grab that typeahead widget or event delegation library from npm, but imagine how much more you’d learn by trying to build those things yourself.</p><p>I’m sure some people reading this article are strongly objecting right about now. Don’t get me wrong. I’m not saying you should never use third-party code. Using well-tested libraries that have the advantage of years of test cases and bug reports is almost always the smart thing to do.</p><p>But in this article I’m talking about how to go from good to great. Most of the people I consider great in this industry are the creators or maintainers of very popular libraries that I use all the time.</p><p>You could probably have a successful career without ever building your own JavaScript library, but you’ll probably also never work close enough to the metal to really get your hands dirty.</p><p>A common question people ask in this industry is: <em>what should I build next?</em> If you’re asking this question, instead of trying to learn a new tool or create some new app, why not try recreating one of your favorite JavaScript libraries or CSS frameworks. The nice thing about doing this is if you ever get stuck, the source code of the existing library will have all the answers for you.</p><h2 id=write-about-what-you-learn>Write about what you learn</h2><p>Last but certainly not least, you should write about what you learn. There are so many good reasons to do this, but perhaps the best reason is it forces you to understand the topic better. If you can’t explain how something works, there’s a decent chance you don’t really understand it yourself. And oftentimes you don’t realize you don’t understand it until you try writing it down.</p><p>In my experience, writing, giving talks, and creating demos has been one of the best ways to force myself to dive in and fully understand something, inside and out. Even if no one ever reads what you write, the process of doing it is more than worth it.</p><aside class=Footnotes><h1 class=Footnotes-title>Footnotes:</h1><ol class=Footnotes-items><li id=footnote-1>Firefox implemented the spec change in <a href=https://en.wikipedia.org/wiki/Firefox_release_history>version 34</a> on December 1, 2014. Chrome implemented it in <a href=https://en.wikipedia.org/wiki/Google_Chrome_release_history>version 44</a> on July 21, 2015, which means Opera will get it shortly. Edge shipped with this implemented on July 29, 2015. A Safari implementation appears to be <a href="https://bugs.webkit.org/show_bug.cgi?id=136754">in progress</a>.</li><li id=footnote-2>You can refer to <a href=https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored>Flexbug #1</a> for a future-friendly, cross-browser workaround to this issue.</li></ol></aside></div><footer class=entry-unrelated><div id=share class=Share><span class=Share-figure><svg viewBox="0 0 39 32"><use xlink:href=#icon-twitter-bird></use></svg></span><p class=Share-pitch>If you liked this article and think others should read it, please <a data-social-network=Twitter data-social-action=tweet data-social-target="" href="http://twitter.com/intent/tweet?text=How%20to%20Become%20a%20Great%20Front-End%20Engineer&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fhow-to-become-a-great-front-end-engineer%2F&via=philwalton">share it on Twitter</a>.</p></div></footer></article></main></div><script>__userTiming&&performance.mark("js:start");</script><script src=/assets/javascript/main.js></script><script>if(__userTiming){performance.mark("js:end"),performance.measure("js:load","js:start","js:end");var jsLoad=performance.getEntriesByName("js:load")[0];ga("send","timing","JavaScript","load",Math.round(jsLoad.duration),"local"),ga("control.send","timing","JavaScript","load",Math.round(jsLoad.duration),"local"),ga("testing.send","timing","JavaScript","load",Math.round(jsLoad.duration),"local")}</script><noscript></noscript></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+  
+    How to Become a Great Front-End Engineer &mdash;
+  
+  Philip Walton
+</title>
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+
+<link rel="preconnect" href="//ajax.googleapis.com">
+<link rel="preconnect" href="//fonts.googleapis.com">
+
+<script>
+(function(window) {
+
+// Check for User Timing support.
+window.__userTiming = window.performance &&
+    typeof performance.mark == 'function' &&
+    typeof performance.measure == 'function' &&
+    typeof performance.getEntriesByName == 'function';
+
+
+// Initializes the ga() command queue.
+window.GoogleAnalyticsObject = '_ga';
+window._ga=window._ga||function(){(_ga.q=_ga.q||[]).push(arguments)};
+window._ga.l=+new Date;
+
+
+/**
+ * Shadows the `window.ga` command queue to allow for easier multi-tracking.
+ */
+window.ga = (function() {
+  // Randomizes the order in which tracker methods are called.
+  // This is necessary because latter trackers will lose more hits (for various
+  // reasons) and the results will be skewed.
+  var trackerNames = ['t0', 'control', 'testing'];
+  var randomizedTrackerNames = [];
+  while (trackerNames.length) {
+    var index = Math.floor(Math.random() * trackerNames.length);
+    var name = trackerNames.splice(index, 1)[0];
+    randomizedTrackerNames.push(name);
+  }
+  return function() {
+    var args = Array.prototype.slice.call(arguments);
+    var command = args[0];
+    for (var i = 0, name; name = randomizedTrackerNames[i]; i++) {
+      args[0] = name + '.' + command;
+      _ga.apply(null, args);
+    }
+  }
+}());
+
+
+// Defines the autotrack options.
+var autotrackOpts = {
+  mediaQueryDefinitions: [
+    {
+      name: 'Breakpoint',
+      dimensionIndex: 1,
+      items: [
+        {name: 'sm', media: 'all'},
+        {name: 'md', media: '(min-width: 36em)'},
+        {name: 'lg', media: '(min-width: 48em)'}
+      ]
+    },
+    {
+      name: 'Resolution',
+      dimensionIndex: 2,
+      items: [
+        {name: '1x',   media: 'all'},
+        {name: '1.5x', media: '(-webkit-min-device-pixel-ratio: 1.5), ' +
+                              '(min-resolution: 144dpi)'},
+        {name: '2x',   media: '(-webkit-min-device-pixel-ratio: 2), ' +
+                              '(min-resolution: 192dpi)'},
+      ]
+    },
+    {
+      name: 'Orientation',
+      dimensionIndex: 3,
+      items: [
+        {name: 'landscape', media: '(orientation: landscape)'},
+        {name: 'portrait',  media: '(orientation: portrait)'}
+      ]
+    }
+  ],
+  virtualPageviewFields: {
+    dimension4: 'pageVisibilityTracker'
+  }
+};
+
+
+// Defines common tracker options.
+var trackerOpts =  {siteSpeedSampleRate: 10};
+
+
+_ga('create', 'UA-21292978-1', 'auto', trackerOpts);
+_ga('create', 'UA-21292978-4', 'auto', 'control', trackerOpts);
+_ga('create', 'UA-21292978-3', 'auto', 'testing', trackerOpts);
+
+
+
+  _ga(function() {
+    var trackers = _ga.getAll();
+    for (var i = 0, tracker; tracker = trackers[i]; i++) {
+      tracker.set('sendHitTask', function(model) {
+        console.log(model.get('name'), Date.now(),
+            model.get('hitPayload').split('&').map(decodeURIComponent));
+
+        throw 'Abort tracking in non-production environments.';
+      });
+    }
+  });
+
+
+
+ga('require', 'mediaQueryTracker', autotrackOpts);
+ga('require', 'outboundLinkTracker');
+ga('require', 'socialTracker');
+// ga('require', 'urlChangeTracker');
+
+
+// Only requires `pageVisibilityTracker` on the 'testing' tracker.
+_ga('testing.require', 'pageVisibilityTracker', autotrackOpts);
+
+ga('send', 'pageview', {dimension4: 'pageload'});
+
+}(window));
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+
+<script>
+// Tracks the CSS load start time.
+__userTiming && performance.mark('css:start');
+</script>
+
+<link href="/assets/css/main.css" rel="stylesheet">
+
+<script>
+if (__userTiming) {
+  performance.mark('css:end');
+  performance.measure('css:block', 'css:start', 'css:end');
+  var cssBlock = performance.getEntriesByName('css:block')[0];
+  // Tracks the amount of time loading the CSS blocks rendering.
+  ga('send', 'timing', 'CSS', 'block', Math.round(cssBlock.duration), 'local');
+}
+</script>
+
+<script>
+// Tracks the font load start time.
+__userTiming && performance.mark('fonts:start');
+
+WebFontConfig = {
+  google: {families: ['Open+Sans:400,400italic,600:latin']},
+  active: function() {
+    if (__userTiming) {
+      performance.mark('fonts:end');
+      performance.measure('fonts:load', 'fonts:start', 'fonts:end')
+      var fontsLoad = performance.getEntriesByName('fonts:load')[0];
+      // Tracks how long it took to load the fonts including
+      // the time it tooks to download the webfont.js script.
+      ga('send', 'timing', 'Fonts', 'load',
+          Math.round(fontsLoad.duration), 'fonts.googleapis.com');
+    }
+  },
+  inactive: function() {
+    // Tracks when load errors occur.
+    ga('send', 'event', 'Fonts', 'error', 'fonts.googleapis.com', {
+      nonInteraction: true
+    });
+  }
+};
+</script>
+
+<script async src="//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+
+
+<link href="//feeds.feedburner.com/philipwalton" rel="alternate" title="Philip Walton" type="application/atom+xml">
+
+<meta name="description" content="Thoughts on web development, open source, software architecture, and the future.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<svg display="none">
+  <defs>
+    <g id="icon-twitter-bird">
+      <path d="M34.7 5c1.7-1 2.8-2.5 3.4-4.4-1.6 0.9-3.3 1.6-5 2-1.6-1.7-3.6-2.6-5.8-2.6-2.2 0-4.2 0.7-5.7 2.3-1.6 1.6-2.3 3.4-2.3 5.8 0 0.6 0.1 1.2 0.2 1.8-6.9-0.4-12.6-3.2-16.9-8.5-0.7 1.2-1.1 2.7-1.1 4.1 0 3 1.2 5.2 3.6 6.8-1.2 0-2.5-0.4-3.6-1v0.1c0 2 0.6 3.7 1.8 5.2 1.2 1.5 2.7 2.5 4.6 2.8-0.6 0.1-1.2 0.2-2.1 0.2-0.4 0-0.9 0-1.5-0.1 0.5 1.5 1.4 2.8 2.8 3.8 1.4 1 3 1.5 4.7 1.6-3.1 2.5-6.4 3.7-10 3.7-0.5 0-1.1 0-2-0.1 3.7 2.2 7.8 3.4 12.4 3.4 3.6 0 6.8-0.7 9.8-2.1 3-1.4 5.4-3.2 7.3-5.4 1.8-2.2 3.3-4.7 4.3-7.4s1.6-5.4 1.6-8.1v-1c1.4-1 2.7-2.5 3.9-4.2-1.6 0.6-3.2 1.1-4.7 1.2z"></path>
+    </g>
+    <g id="icon-rss">
+      <path d="M16 0q6.6 0 11.3 4.7t4.7 11.3q0 6.6-4.7 11.3t-11.3 4.7-11.3-4.7-4.7-11.3 4.7-11.3 11.3-4.7zM10.7 24q1.1 0 1.9-0.8t0.8-1.9-0.8-1.9-1.9-0.8-1.9 0.8-0.8 1.9 0.8 1.9 1.9 0.8zM16.7 24h3.3q0-5-3.5-8.5t-8.5-3.5v3.3q3.6 0 6.1 2.5t2.5 6.1zM22.7 24h3.3q0-3.7-1.4-7t-3.8-5.7-5.7-3.8-7-1.4v3.3q6.1 0 10.4 4.3t4.3 10.4z"></path>
+    </g>
+    <g id="icon-twitter">
+      <path d="M16 0q6.6 0 11.3 4.7t4.7 11.3-4.7 11.3-11.3 4.7-11.3-4.7-4.7-11.3 4.7-11.3 11.3-4.7zM25.7 12.5q1.2-0.9 2.3-2.3-1.3 0.6-2.6 0.7 1.4-0.8 2-2.5-1.4 0.8-2.9 1.1-1.3-1.4-3.3-1.4-1.9 0-3.2 1.3t-1.3 3.2q0 0.6 0.1 1-5.7-0.3-9.4-4.8-0.6 1.1-0.6 2.3 0 2.4 2 3.8-1 0-2-0.6v0q0 1.6 1 2.9t2.6 1.6q-0.5 0.1-1.2 0.1-0.3 0-0.9-0.1 0.4 1.4 1.6 2.2t2.6 0.9q-2.6 2.1-5.6 2.1-0.4 0-1.1-0.1 3.1 2 7 2 3 0 5.5-1.2t4.1-3.1 2.4-4.1 0.9-4.6v-0.6z"></path>
+    </g>
+    <g id="icon-github">
+      <path d="M16 0q6.59 0 11.3 4.7t4.7 11.3q0 5.52-3.39 9.85t-8.61 5.67v-4.18q0-2.89-1.67-4.18 3.37-0.52 5.52-2.41t2.15-4.74q0-2.52-1.85-4.59 0.67-3.07-0.15-4.74-2.04 0.19-4.63 1.78-1.78-0.44-3.37-0.44t-3.37 0.44q-2.59-1.59-4.63-1.78-0.85 1.78-0.15 4.74-1.85 2.07-1.85 4.59 0 2.85 2.15 4.74t5.52 2.41q-0.85 0.63-1.3 1.82-0.67 0-1.37-0.13t-1.28-0.35-1.11-0.5-0.96-0.56-0.72-0.52-0.48-0.39l-0.15-0.15q-0.26-0.26-0.52-0.07-0.3 0.19-0.22 0.52 0.7 1.37 1.19 2 1.93 2.48 5.26 3.48v3.22q-5.22-1.33-8.61-5.67t-3.39-9.85q0-6.63 4.68-11.31t11.32-4.68z"></path>
+    </g>
+    <g id="icon-menu">
+      <path d="M3 6h18v2.016h-18v-2.016zM3 12.984v-1.969h18v1.969h-18zM3 18v-2.016h18v2.016h-18z"></path>
+    </g>
+  </defs>
+</svg>
+
+
+</head>
+<body class="Site">
+
+  <div class="Site-header">
+
+    <header class="Header" id="drawer-container">
+
+      <a class="Header-info" href="/" title="Home">
+        <h1 class="Header-title">Philip Walton</h1>
+        <p class="Header-tagline">Engineer @ Google</p>
+      </a>
+
+      <div class="Header-drawer" id="drawer-contents">
+        <div class="Drawer">
+          <nav class="Drawer-site">
+            <ul class="SiteNav">
+  <li class="SiteNav-item">
+    <a class="SiteNav-link" href="/articles/" title="Articles">Articles</a>
+  </li>
+  <li class="SiteNav-item">
+    <a class="SiteNav-link" href="/about/" title="About">About</a>
+  </li>
+</ul>
+
+          </nav>
+          <nav class="Drawer-social">
+            <ul class="SocialNav">
+  <li class="SocialNav-item">
+    <a class="SocialNav-link SocialNav-link--twitter" href="https://twitter.com/philwalton" title="Twitter">
+      <svg viewBox="0 0 32 32">
+        <use xlink:href="#icon-twitter"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="SocialNav-item">
+    <a class="SocialNav-link SocialNav-link--github" href="https://github.com/philipwalton" title="Github">
+      <svg viewBox="0 0 32 32">
+        <use xlink:href="#icon-github"></use>
+      </svg>
+    </a>
+  </li>
+  <li class="SocialNav-item">
+    <a class="SocialNav-link SocialNav-link--rss" href="http://feeds.feedburner.com/philipwalton" title="RSS">
+      <svg viewBox="0 0 32 32">
+        <use xlink:href="#icon-rss"></use>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+          </nav>
+        </div>
+      </div>
+
+      <div class="Header-drawerToggle" id="drawer-toggle">
+        <svg class="Icon" viewBox="0 0 24 24">
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+      </div>
+
+    </header>
+
+  </div>
+
+  <div class="Site-contentContainer">
+    <main class="Site-content">
+      
+
+<article role="article" class="hentry">
+
+  <header class="ContentHeader">
+    <h1 class="ContentHeader-articleTitle entry-title">How to Become a Great Front-End Engineer</h1>
+    <time class="ContentHeader-articleDate published"
+        datetime="2015-08-02T15:39:17-07:00">
+      August 2, 2015
+    </time>
+  </header>
+
+  <div class="entry-content">
+    
+        <p>I recently received an email from a reader of my blog that, for whatever reason, really got me thinking. Here’s what it said:</p>
+<blockquote>
+<p>Hi Philip, is it okay to ask how you become a great front-end engineer?<br>
+Any advice?</p>
+</blockquote>
+<p>I have to admit, I was surprised to even be asked this question since I’ve never really thought of myself as a “great” front-end engineer. In fact, the first few years I worked in this industry, I honestly don’t think I was qualified for any of the jobs I had. I only applied for them because I didn’t realize how little I knew, and I only got them because the people interviewing me didn’t know what questions to ask.</p>
+<p>That being said, I ended up doing very well in each of these roles and became a valued member of the team. When I eventually left (for the next challenge I was also not qualified for) I was usually tasked with hiring my replacement. Looking back now on how I approached these interviews, I’m struck by how much emphasis I placed on knowledge—despite lacking in that area when I started. My current self probably wouldn’t have hired my former self, even though I knew from personal experience that success was possible.</p>
+<p>The longer I work on the web, the more I realize that what separates the good people from the really good people isn’t what they know; it’s how they think. Obviously knowledge is important—critical in some cases—but in a field that changes so quickly, how you go about acquiring that knowledge is always going to be more important (at least in the long term) than what you know at any given time. And perhaps most important of all: how you use that knowledge to solve everyday problems.</p>
+<p>There are plenty of articles out there that talk about the languages, frameworks, and tools you need to know to get a job. I wanted to take a different approach. In this article I’m going to talk about the mindset of a front-end engineer, and hopefully give a more lasting answer to the question: <em>how do you become great?</em></p>
+<h2 id="dont-just-solve-problems-figure-out-whats-really-going-on">Don’t just solve problems, figure out what’s really going on</h2>
+<p>Too many people who write CSS and JavaScript tinker until they find something that works, and then they just move on. I know this happens because I see it all the time during code reviews.</p>
+<p>I’ll frequently ask someone: “Why did you add <code>float: left</code> here?” or “is this <code>overflow: hidden</code> really necessary?”, and they’ll respond: “I don’t know, but if I remove it, it doesn’t work”.</p>
+<p>The same is true of JavaScript. I’ll see a <code>setTimeout</code> being used to prevent a race-condition, or someone stopping event propagation with no regard for <a href="http://css-tricks.com/dangers-stopping-event-propagation/">how it will affect</a> other event handlers on the page.</p>
+<p>I get that there are times when you need something that works, and you need it now. But if you never take the time to understand the root of your problem, you’ll find yourself in the same situation over and over again.</p>
+<p>Taking the time to figure out <em>why</em> your hack works may seem costly now, but I promise it’ll save you time in the future. Having a fuller understanding of the systems you’re working within will mean less guess-and-check work going forward.</p>
+<h2 id="learn-to-anticipate-future-changes-to-the-browser-landscape">Learn to anticipate future changes to the browser landscape</h2>
+<p>One of the main differences between front and back-end code is back-end code generally runs in an environment that’s under your control. The front end, by contrast, is completely outside of your control. The platform or device your users have could completely change at any moment, and your code needs to be able to handle that gracefully.</p>
+<p>I remember reading through the source code of a popular JavaScript framework back in 2011 and seeing the following line (changed for simplicity):</p>
+<pre><code class="language-js"><span class="hljs-keyword">var</span> isIE6 = !isIE7 &amp;&amp; !isIE8 &amp;&amp; !isIE9;
+</code></pre>
+<p>In this case IE6 was the catchall for IE versions, presumably to handle versions of IE older than 6. But at soon as IE10 came out, large portions of our application completely broke.</p>
+<p>I understand that in the real world feature detection doesn’t work 100% of the time, and sometimes you have to depend on buggy behavior or whitelist browsers whose feature detects erroneously return false positives (or negatives), but any time you do this it’s absolutely critical that you anticipate the almost-certain future where these bugs no longer exist.</p>
+<p>For many of us, the code we write today will outlive our tenure at our current job. Some of the code I wrote more than 8 years ago is still running on large, production websites today, a thought that is both satisfying and terrifying.</p>
+<h2 id="read-the-specs">Read the specs</h2>
+<p>There will always be browser bugs, but when two browsers render the same code differently, people will often assume, without checking for themselves, that the so-called “good” browser is right and the “bad” browser is wrong. But this isn’t always the case, and when you’re wrong about this assumption, whatever workaround you choose will almost certainly break in the future.</p>
+<p>A timely example of this is the default minimum size of flex items. According to the <a href="http://www.w3.org/TR/css-flexbox/#min-size-auto">spec</a>, the initial <code>min-width</code> and <code>min-height</code> value for flex items is <code>auto</code> (rather than <code>0</code>), which means by default they shouldn’t shrink to smaller than the minimum size of their content. For the past 8 months, Firefox was the only browser to implement this correctly.<sup><a href="#footnote-1">[1]</a></sup></p>
+<p>If you encountered this cross-browser incompatibility and noticed that your site rendered the same in Chrome, IE, Opera, and Safari, but looked different in Firefox, you’d probably assume Firefox had it wrong. In fact, I’ve witnessed this happen a lot. Many of the issues reported on my <a href="https://github.com/philipwalton/flexbugs">Flexbugs</a> project were actually due to this incompatibility, and the workarounds proposed, if implemented, would have failed two weeks ago when Chrome 44 came out. Instead of these workarounds following the spec, they were unknowingly penalizing good behavior.<sup><a href="#footnote-2">[2]</a></sup></p>
+<p>When two or more browsers render the same code differently, you should take the time to figure out which one of them is correct and write your code with that in mind. Your workarounds will be far more future-proof as a result.</p>
+<p>In addition, so-called “great” front-end engineers are often the people on the forefront of change, adopting new technologies before they’re mainstream and even contributing to the development of those technologies. If you cultivate your ability to look at a spec and imagine how a technology will work before you can play with it in a browser, you’ll be part of a select group who is able to talk about and influence the development of that spec.</p>
+<h2 id="read-other-peoples-code">Read other people’s code</h2>
+<p>Reading other people’s code, for fun, is probably not your idea of a fun Saturday night, but it’s without a doubt one of the best ways to become a better developer.</p>
+<p>Solving problems on your own is a great way to learn, but if that’s all you ever do, you’ll plateau pretty quickly. Reading other people’s code opens your mind to new ways of doing things. And the ability to read and understand code that you didn’t write is essential to working on a team or contributing to open source projects.</p>
+<p>I actually think one of the biggest mistakes companies make when hiring new engineers is they only ask them to write code—new code, from scratch. I’ve never been on an interview where I was asked to read some existing code, find the problems with it, and then fix those problems. It’s really too bad because most of your time as an engineer is spent adding to or changing an existing codebase. Rarely are you building something new from scratch.</p>
+<h2 id="work-with-people-smarter-than-you">Work with people smarter than you</h2>
+<p>I get the impression that there are a lot more front-end developers who want to freelance (or otherwise work full-time by themselves) than there are back-end developers with the same goal. Perhaps it’s because front-end people tend to be self-taught and back-end people tend to come from academia.</p>
+<p>The problem with being both self-taught and also working for yourself is you generally don’t get the benefit of learning from people smarter than you. You don’t have anyone to bounce ideas off of or review your code.</p>
+<p>I strongly recommend, for at least the beginning part of your career, that you work on a team, specifically a team of people who are smarter and more experienced than you.</p>
+<p>If you do end up working for yourself at some point in your career, make a point of becoming (or staying) involved in open source. Actively contributing to open-source projects gives you many of the same benefits of working on a team, sometimes even more.</p>
+<h2 id="reinvent-the-wheel">Reinvent the wheel</h2>
+<p>Reinventing the wheel is bad for business, but it’s great for learning. You may be tempted to grab that typeahead widget or event delegation library from npm, but imagine how much more you’d learn by trying to build those things yourself.</p>
+<p>I’m sure some people reading this article are strongly objecting right about now. Don’t get me wrong. I’m not saying you should never use third-party code. Using well-tested libraries that have the advantage of years of test cases and bug reports is almost always the smart thing to do.</p>
+<p>But in this article I’m talking about how to go from good to great. Most of the people I consider great in this industry are the creators or maintainers of very popular libraries that I use all the time.</p>
+<p>You could probably have a successful career without ever building your own JavaScript library, but you’ll probably also never work close enough to the metal to really get your hands dirty.</p>
+<p>A common question people ask in this industry is: <em>what should I build next?</em>
+If you’re asking this question, instead of trying to learn a new tool or create some new app, why not try recreating one of your favorite JavaScript libraries or CSS frameworks. The nice thing about doing this is if you ever get stuck, the source code of the existing library will have all the answers for you.</p>
+<h2 id="write-about-what-you-learn">Write about what you learn</h2>
+<p>Last but certainly not least, you should write about what you learn. There are so many good reasons to do this, but perhaps the best reason is it forces you to understand the topic better. If you can’t explain how something works, there’s a decent chance you don’t really understand it yourself. And oftentimes you don’t realize you don’t understand it until you try writing it down.</p>
+<p>In my experience, writing, giving talks, and creating demos has been one of the best ways to force myself to dive in and fully understand something, inside and out. Even if no one ever reads what you write, the process of doing it is more than worth it.</p>
+<aside class="Footnotes">
+  <h1 class="Footnotes-title">Footnotes:</h1>
+  <ol class="Footnotes-items">
+    <li id="footnote-1">Firefox implemented the spec change in <a href="https://en.wikipedia.org/wiki/Firefox_release_history">version 34</a> on December 1, 2014. Chrome implemented it in <a href="https://en.wikipedia.org/wiki/Google_Chrome_release_history">version 44</a> on July 21, 2015, which means Opera will get it shortly. Edge shipped with this implemented on July 29, 2015. A Safari implementation appears to be <a href="https://bugs.webkit.org/show_bug.cgi?id=136754">in progress</a>.</li>
+    <li id="footnote-2">You can refer to <a href="https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored">Flexbug #1</a> for a future-friendly, cross-browser workaround to this issue.</li>
+  </ol>
+</aside>
+
+      
+  </div>
+
+  <footer class="entry-unrelated">
+    <div id="share" class="Share">
+      <span class="Share-figure">
+        <svg viewBox="0 0 39 32">
+          <use xlink:href="#icon-twitter-bird"></use>
+        </svg>
+      </span>
+      <p class="Share-pitch">
+        If you liked this article and think others should read it, please
+
+        
+
+        <a data-social-network="Twitter"
+           data-social-action="tweet"
+           data-social-target=""
+           href="http://twitter.com/intent/tweet?text=How%20to%20Become%20a%20Great%20Front-End%20Engineer&url=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fhow-to-become-a-great-front-end-engineer%2F&via=philwalton">
+           share it on Twitter</a>.
+      </p>
+    </div>
+  </footer>
+
+</article>
+
+
+    </main>
+  </div>
+
+  <script>
+// Tracks the JavaScript load start time.
+__userTiming && performance.mark('js:start')</script>
+
+<script src="/assets/javascript/main.js"></script>
+
+<script>
+if (__userTiming) {
+  performance.mark('js:end');
+  performance.measure('js:load', 'js:start', 'js:end');
+  var jsLoad = performance.getEntriesByName('js:load')[0];
+  // Tracks the amount of time it took the JavaScript to load.
+  ga('send', 'timing', 'JavaScript', 'load',
+      Math.round(jsLoad.duration), 'local');
+}
+</script>
+
+
+  <noscript>
+    <!-- Track if JavaScript is disabled -->
+    <!-- TODO(philipwalton): make this a pageview with a random client ID -->
+    <!-- <img src="https://www.google-analytics.com/collect?v=1&t=event&tid=UA-21292978-1&cid=noscript&ec=Window&ea=load&el=noscript&dl=http%3A%2F%2Fphilipwalton.com%2Farticles%2Fhow-to-become-a-great-front-end-engineer%2F"> -->
+  </noscript>
+
+</body>
+</html>

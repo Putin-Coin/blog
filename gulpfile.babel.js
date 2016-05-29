@@ -374,6 +374,7 @@ gulp.task('watch', ['build', 'serve'], function() {
   gulp.watch('./assets/css/**/*.css', ['css']);
   gulp.watch('./assets/images/*', ['images']);
   gulp.watch('./assets/javascript/*', ['javascript']);
+  gulp.watch('./static/*', ['static']);
   gulp.watch(['./pages/*', './articles/*', './templates/*'], ['pages']);
 });
 

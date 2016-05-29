@@ -1,2 +1,10 @@
 <script src="/assets/javascript/main.js"></script>
 <script>__perf && performance.mark('js:execute')</script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+      .register('sw.js')
+      .catch(console.error.bind(console));
+}
+</script>

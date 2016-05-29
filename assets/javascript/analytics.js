@@ -57,8 +57,8 @@ function createTrackers() {
     window.ga(function() {
       for (let tracker of window.ga.getAll()) {
         tracker.set('sendHitTask', function(model) {
-          console.log(model.get('name'), Date.now(),
-              model.get('hitPayload').split('&').map(decodeURIComponent));
+          // console.log(model.get('name'), performance.now(),
+          //     model.get('hitPayload').split('&').map(decodeURIComponent));
           throw 'Abort tracking in non-production environments.';
         });
       }
